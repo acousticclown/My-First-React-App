@@ -1,0 +1,23 @@
+.navi {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+}
+.navi li {
+  margin: 1rem;
+  color: rgb(255, 255, 255);
+}
+
+.navi li:hover {
+  color: rgb(119, 119, 119);
+  cursor: pointer;
+}

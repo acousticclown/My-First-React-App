@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NewContact from "./Contact";
+import AddContact from "./Add";
+import { useState } from "react";
 
 function App() {
+
+  const[conts, setConts] = useState([
+    { name : "Shivansh Pratap", mobile : "9026631952", email : "shivanshsuryavanshi@gmail.com"},
+    { name : "Suryansh Trivedi", mobile : "9876543221", email : "suryanshtrivedi1@gmail.com"}
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+        <div className = "Contacts">
+          <AddContact />
+          {conts.map(cont => (
+            <NewContact name = {cont.name} mobile = {cont.mobile} email = {cont.email} />
+          ))}
+        </div>
     </div>
   );
 }
